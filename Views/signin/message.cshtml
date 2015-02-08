@@ -1,0 +1,78 @@
+﻿@model laptop_shopping.Models.LoginModel
+
+@{
+    ViewBag.Title = "signin";
+}
+
+
+
+<!-- ####################################################################################################### -->
+    <div class="wrapper col4">
+        
+        <div id="container" class="clear">
+            <font color="red" size="5">User Or Password Does Not Exist</font>
+            <!-- ####################################################################################################### -->
+           
+            <!-- ####################################################################################################### -->
+            <div id="content">
+              
+                
+                <h1>Sign in To Our Website</h1>
+                <div id="respond">
+                    @using (Html.BeginForm("UserLogin","signin","post"))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+
+                        <fieldset>
+                          
+                            
+                                <p>
+                                    @Html.TextBox("Email_ID")
+                                    @Html.LabelFor(m=>m.Email)
+                                    
+                                    @Html.ValidationMessageFor(m => m.Email)
+                                </p>
+                                <p>
+                                    @Html.Password("Password")
+                                    @Html.LabelFor(m => m.Password)
+                                   
+                                    @Html.ValidationMessageFor(m => m.Password)
+                                </p>
+                                <p>
+                                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                   
+                                </p>
+                           
+                            <input type="submit" value="Log in" />
+                        </fieldset>
+                        <p>
+                            @Html.ActionLink("Sign up","signup") if you don't have an account.
+                        </p>
+                        
+                         @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                   }
+                        
+                    }
+                   
+                </div>
+            </div>  @*end of id content*@
+            <div id="column">
+                
+                <div class="holder">
+                    
+                </div>
+                <div id="featured">
+                    
+                </div>
+                <div class="holder">
+                   
+                </div>
+            </div>   @*end if id column*@
+            <!-- ####################################################################################################### -->
+            <div class="clear"></div>
+        </div>
+    </div>   @*end of wrapper col4*@
+    

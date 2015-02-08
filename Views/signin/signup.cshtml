@@ -1,0 +1,112 @@
+﻿@model laptop_shopping.Models.Model1
+
+@{
+    ViewBag.Title = "signup";
+}
+
+@this.Session["fname"]
+
+    <!-- ####################################################################################################### -->
+    <div class="wrapper col4">
+        <div id="container" class="clear">
+            <!-- ####################################################################################################### -->
+            
+            <!-- ####################################################################################################### -->
+            <div id="content">
+               
+               
+                <h1>Sign up To Our Website,Before You Made A Purchase.</h1>
+                <div id="respond">
+@using (Html.BeginForm("signin","signin", "post")) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    
+    <fieldset> 
+            <p>
+                @Html.TextBoxFor(m => m.fName)
+                @Html.LabelFor(m => m.fName)
+                @Html.ValidationMessageFor(m => m.fName)
+            </p>
+
+            <p>
+                @Html.TextBoxFor(m => m.lName)
+                @Html.LabelFor(m => m.lName)
+                
+                @Html.ValidationMessageFor(m => m.lName)
+            </p>
+
+            <p>
+                @Html.TextBoxFor(m => m.address)
+                @Html.LabelFor(m => m.address)
+                
+                @Html.ValidationMessageFor(m => m.address)
+            </p>
+
+            <p>
+                @Html.TextBoxFor(m => m.phoneno)
+                @Html.LabelFor(m => m.phoneno)
+                
+                @Html.ValidationMessageFor(m => m.phoneno)
+            </p>
+
+            <p>
+                @Html.TextBoxFor(m => m.email)
+                @Html.LabelFor(m => m.email)
+                
+                @Html.ValidationMessageFor(m => m.email)
+            </p>
+
+            <p>
+                @Html.PasswordFor(m => m.Password)
+                @Html.LabelFor(m => m.Password)
+                
+                @Html.ValidationMessageFor(m => m.Password)
+            </p>
+
+            <p>
+                @Html.PasswordFor(m => m.ConfirmPassword)
+                @Html.LabelFor(m => m.ConfirmPassword)
+               
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </p>
+             <p>
+                <input type="file" name="Name" />
+                
+             </p>
+
+            <input type="submit" value="submit" />
+            
+</fieldset>
+}
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                   }
+
+                   
+                </div> @*end of div id respond*@
+            </div>  @*end of id content*@
+            <div id="column">
+                
+                <div class="holder">
+                    
+                </div>
+                <div id="featured">
+                    
+                </div>
+                <div class="holder">
+                   
+                </div>
+            </div>   @*end if id column*@
+            <!-- ####################################################################################################### -->
+            <div class="clear"></div>
+        </div>
+    </div>   @*end of wrapper col4*@
+    <!-- ####################################################################################################### -->
+   
+
+
+
+
+
+
+

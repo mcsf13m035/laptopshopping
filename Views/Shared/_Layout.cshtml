@@ -1,0 +1,213 @@
+﻿
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    
+<html>
+<head>
+
+    <title>Online Laptop Shopping</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="~/content/layout.css" type="text/css" />
+    <link rel="stylesheet" href="~/content/homepage.css" type="text/css" />
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.ui.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.defaultvalue.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.scrollTo-min.js"></script>
+    <script type="javascript" src="~/Scripts/slider.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#fullname, #validemail, #message").defaultvalue("Full Name", "Email Address", "Message");
+            $('#shout a').click(function () {
+                var to = $(this).attr('href');
+                $.scrollTo(to, 1200);
+                return false;
+            });
+            $('a.topOfPage').click(function () {
+                $.scrollTo(0, 1200);
+                return false;
+            });
+            $("#tabcontainer").tabs({
+                event: "click"
+            });
+        });
+
+
+
+    </script>
+    <!-- Homepage Only Scripts -->
+
+    <script type="text/javascript" src="~/Scripts/jquery.cycle.min.js"></script>
+    <script type="text/javascript">
+
+      
+    </script>
+    <script type="text/javascript" src="~/Scripts/swfobject.js"></script>
+    <script type="text/javascript">
+        var flashvars = {};
+        flashvars.cssSource = "~/Content/piecemaker.css";
+        flashvars.xmlSource = "~/Content/piecemaker.xml";
+        var params = {};
+        params.play = "false";
+        params.menu = "false";
+        params.scale = "showall";
+        params.wmode = "transparent";
+        params.allowfullscreen = "true";
+        params.allowscriptaccess = "sameDomain";
+        params.allownetworking = "all";
+        swfobject.embedSWF('~/Scripts/piecemaker.swf', 'piecemaker', '960', '430', '10', null, flashvars, params, null);
+    </script>
+    <!-- End Homepage Only Scripts -->
+</head>
+<body id="top">
+    <div class="wrapper col1">
+        <div id="topbar" class="clear">
+            <form action="#" method="post" id="search">
+                <fieldset>
+                    <legend>Site Search</legend>
+                    <input type="text" value="Search Our Website&hellip;" onfocus="this.value=(this.value=='Search Our Website&hellip;')? '' : this.value ;" />
+                    <input type="image" id="go" src="~/images/search.gif" alt="Search" />
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <!-- ####################################################################################################### -->
+    <div class="wrapper col2">
+        <div id="header" class="clear">
+            <div class="fl_left">
+                <h1 id="H1">Online Laptop Shopping</h1>
+            </div>
+            <div id="topnav">
+                <ul>
+
+                    <li class="last"><a href="/gallery/Gallery">Gallery</a></li>
+                    <li><a href="/signin/signup">Sign Up</a></li>
+                    <li><a href="/signin/signin">Sign In</a></li>
+                    <li><a href="/Home/index">Homepage</a></li>
+                    <li><a href="/review/reviews">Reviews</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- ####################################################################################################### -->
+    <div class="wrapper col3">
+        <div id="featured_slide">
+            <div>
+                <img id="cf4a img:nth-of-type(1)" src="~/images/L21.jpg" alt="" />
+                <img id="cf4a img:nth-of-type(2)" src="~/images/L19.jpg" alt="" />
+                <img src="~/images/L20.jpg" alt="" />
+            </div>
+
+            @*<section>
+                <button class="next">Next</button>
+                <button class="prev">Previous</button>
+                <div class="container">
+                    <div style="display: inline-block;">
+                        <img src="~/images/L20.jpg" alt="" />
+                    </div>
+                    <div style="display: inline-block;">
+                        <img src="~/images/L20.jpg" alt="" />
+                    </div>
+                    </div>
+                    </section>*@
+            <!-- ####################################################################################################### -->
+            @*<div id="cf">
+                    <img class="bottom" src="~/images/21.jpg" alt=" 1" width="700" height="300" />
+                    <img class="top" src="~/images/L19.jpg" alt=" 2" width="700" height="300" />
+                    <img class="bottom" src="~/images/L16.jpg" alt=" 3" width="700" height="300" />
+                    <img class="top" src="~/images/L20.jpg" alt=" 4" width="700" height="300" />
+                </div>*@
+
+            @*code for slider*@
+            @*<div id="cf7">
+                    <img class='opaque' src="/images/L21.jpg" width="300" height="300" />
+                    <img class="top" src="/images/L20.jpg" width="700" height="300" />
+                    <img class="top" src="/images/L21.jpg" width="700" height="300" />
+                    <img class="top" src="/images/L20.jpg" width="700" height="300" />
+                </div>
+                <p id="cf7_controls">
+                    <span class="selected">Image 1</span>
+                    <span>Image 2</span>
+                    <span>Image 3</span>
+                    <span>Image 4</span>
+                </p>*@
+
+
+            <!-- ####################################################################################################### -->
+        </div>
+    </div>
+    <!-- ####################################################################################################### -->
+    <div class="wrapper col4">
+        <div id="container" class="clear">
+            <!-- ####################################################################################################### -->
+            <div id="shout" class="clear">
+                <div class="fl_left">
+                    <h2>World's Best Laptops,Available Here</h2>
+                    <p>Why not try our services today, you won't regret your choice !</p>
+                </div>
+                <p class="fl_right"><a href="#contact">Contact Us Today</a></p>
+            </div>
+            <!-- ####################################################################################################### -->
+         
+            <!-- ####################################################################################################### -->
+        </div>
+    </div>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+    <!-- ####################################################################################################### -->
+    <div class="wrapper">
+        <div id="footer" class="clear">
+            <div class="fl_left">
+                <div class="about_us border">
+                    <h2>About Us</h2>
+                    <p>Our empowers countries, communities, customers and people everywhere to use technology to realize their dreams. Customers trust us to deliver technology solutions that help them do and achieve more, whether they’re at home, work, school or anywhere in their world. Learn more about our story, purpose and people behind our customer-centric approach.</p>
+                </div>
+                <div id="contact" class="clear">
+                    <h2>Contact Us</h2>
+                    <div class="fl_left">
+                        <form method="post" action="#">
+                            <label for="name">Name:</label>
+                            <input type="text" name="fullname" id="fullname" value="fullname">
+                            <label for="validemail">Email:</label>
+                            <input type="text" name="validemail" id="validemail" value="Email">
+                            <label for="message">Message:</label>
+                            <input type="text" name="message" id="message" value="Message" width="225" height="50">
+                            <button type="submit" value="submit"><span>Submit</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ####################################################################################################### -->
+            <div class="fl_right">
+
+                <h2>Keep Up To Date</h2>
+                <ul class="socialize">
+                    <li><span>Facebook:</span> <a href="https://www.facebook.com/">www.facebook.com</a></li>
+                    <li><span>Twitter:</span> <a href="https://twitter.com/">www.twitter.com</a></li>
+                    <li class="last"><span>Yahoo:</span> <a href="https://www.yahoo.com/">www.yahoo.com</a></li>
+                    <li class="last"><span>pucit:</span> <a href="mailto:mcsf13m035@pucit.edu.pk">mcsf13m035@pucit.edu.pk</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="backtotop"><a href="#top" class="topOfPage">To The Top</a></div>
+    </div>
+    <!-- ####################################################################################################### -->
+    <div class="wrapper">
+        <div id="copyright" class="clear">
+            <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Domain Name</a></p>
+            @*<p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>*@
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
